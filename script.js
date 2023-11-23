@@ -79,7 +79,24 @@ const displayMovements = function (movements) {
 };
 
 displayMovements(account1.movements);
-console.log(containerMovements.innerHTML);
+
+const createUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(word => word[0])
+      .join('');
+  });
+};
+
+const user = 'Steven Thomas Williams';
+const username = user;
+
+createUsernames(accounts);
+console.log(accounts);
+
+// console.log(containerMovements.innerHTML);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -89,7 +106,7 @@ console.log(containerMovements.innerHTML);
 //   ['EUR', 'Euro'],
 //   ['GBP', 'Pound sterling'],
 // ]);
-
+//
 // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
@@ -116,3 +133,21 @@ console.log(containerMovements.innerHTML);
 //     console.log(`Movement ${i + 1}: you withdrew ${Math.abs(mov)}`);
 //   }
 // });
+
+// const eurToUsd = 1.1;
+// const movementUSD = movements.map(mov => mov * eurToUsd);
+
+// console.log(movements);
+// console.log(movementUSD);
+
+// // const movementsUSDfor = [];
+// // for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+// // console.log(movementsUSDfor);
+
+// const movementsDescription = movements.map((mov, i) => {
+//   return `Movement ${i + 1}: you ${
+//     mov > 0 ? 'you deposited' : 'you withdrew'
+//   } ${Math.abs(mov)}`;
+// });
+
+// console.log(movementsDescription);
