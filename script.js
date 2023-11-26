@@ -212,24 +212,33 @@ btnClose.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
-const overalBalance = accounts
-  .map(acc => acc.movements)
-  .flat()
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overalBalance);
+// const overalBalance = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
 
-const overalBalance2 = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(overalBalance2);
+// const overalBalance2 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance2);
 // const currencies = new Map([
 //   ['USD', 'United States dollar'],
 //   ['EUR', 'Euro'],
 //   ['GBP', 'Pound sterling'],
 // ]);
 //
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
 
+console.log(movements);
+console.log(
+  movements.sort((a, b) => {
+    if (a > b) return 1;
+    if (b > a) return -1;
+  })
+);
 // console.log(account4.movements.every(mov => mov > 0));
 
 // const deposit = mov => mov > 0;
